@@ -12,11 +12,11 @@ sudo openssl genrsa 2048 > default.key
 sudo chmod 600 default.key
 sudo openssl req -new -x509 -nodes -sha256 -days 3650 -key default.key -out default.crt
 
-cp /etc/nginx/nginx.conf /etc/nginx/nginx-default.conf
-cp /etc/nginx/app/nginx.conf /etc/nginx/nginx.conf
-cp /etc/nginx/app/vhost-default.conf /etc/nginx/sites-enabled/default
+sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx-default.conf
+sudo cp /etc/nginx/app/nginx.conf /etc/nginx/nginx.conf
+sudo cp /etc/nginx/app/vhost-default.conf /etc/nginx/sites-enabled/default
 
 echo "========================================="
 echo "Nginx 설치가 완료되었습니다."
-echo "/etc/nginx/app/require.conf를 include 하세요."
 echo "========================================="
+sudo service nginx reload
